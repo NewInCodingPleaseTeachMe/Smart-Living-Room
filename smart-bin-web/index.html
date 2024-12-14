@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Smart Bin Monitor</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- External CSS -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Firebase SDK -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/9.23.0/firebase-app-compat.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/9.23.0/firebase-database-compat.min.js"></script>
+    
+    <!-- Chart.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+</head>
+<body>
+    <div class="warning" id="warning">
+        Bin is almost full! Please empty soon.
+    </div>
+
+    <div class="card">
+        <h2>Fill Level</h2>
+        <div class="status-value" id="fillLevel">--</div>
+        <div class="chart-container">
+            <canvas id="fillChart"></canvas>
+        </div>
+    </div>
+
+    <div class="status-grid">
+        <div class="status-item">
+            <div class="status-label">Lid Status</div>
+            <div class="status-value" id="lidStatus" style="font-size: 1.5em;">--</div>
+        </div>
+        <div class="status-item">
+            <div class="status-label">Proximity</div>
+            <div class="status-value" id="proximity" style="font-size: 1.5em;">--</div>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>Last Updated</h2>
+        <div id="lastUpdate" style="color: #666;">--</div>
+    </div>
+
+    <!-- External JavaScript -->
+    <script src="firebase-config.js"></script>
+    <script src="chart-config.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
